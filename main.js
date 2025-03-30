@@ -1,5 +1,4 @@
 
-import * as languageData from './assets/Scripts/gameData.js';
 
 const audioContext = new (window.AudioContext || window.webkitAudioContext)();
 function playSound(url) {
