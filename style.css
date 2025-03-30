@@ -1,0 +1,152 @@
+body {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #332a29;
+    overflow: auto;
+    min-height: 100%;
+}
+
+html {
+    height: 100%;
+    overflow: auto;
+}
+
+@font-face {
+    font-family: 'DefaultFont';
+    src: url('./assets/Fonts/DefaultFont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+:root {
+    --borderColor: #FFFACD; 
+}
+
+@keyframes shake {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    50% { transform: translateX(5px); }
+    75% { transform: translateX(-5px); }
+    100% { transform: translateX(0); }
+}
+
+.shake {
+    animation: shake 0.3s ease-in-out;
+}
+
+.secondary-background {
+    width: 386px;
+    height: 750px;
+    background: #52443c;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid black;
+    border-radius: 5px;
+    position: relative;
+    overflow: hidden;
+}
+
+.languageButton {
+    color: white;
+    font-family: 'DefaultFont';
+    font-size: 16px;
+    user-select: none;
+    text-shadow:
+        1px 1px 0px black,
+        -1px -1px 0px black,
+        1px -1px 0px black,
+        -1px 1px 0px black;
+    border: 2px solid black;
+    background-color: #D2B48C;
+    width: 200px;
+    height: 42px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 5000;
+    top: 50%;
+    transform: translate(0%, -50%); /* Perfect center */
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+    image-rendering: pixelated;
+    border-radius: 10px;
+    gap: 8px;
+}
+
+.languageButton:hover {
+    box-shadow: 0 0 10px 2px var(--borderColor);
+}
+
+.languageButton img {
+    width: 24px;  
+    height: 24px;
+}
+
+.languageSelector {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; 
+    z-index: 5000;
+    gap: 10px; 
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+    opacity: 0;
+}
+
+.monitor {
+    position: absolute;
+    background-image: url('./assets/Sprites/monitor.png');
+    background-size: 386px 603px;
+    background-repeat: no-repeat;
+    width: 386px;
+    height: 603px;
+    padding: 0px;
+    bottom: 0%;
+    text-align: center;
+    image-rendering: pixelated;
+}
+
+.monitorButton {
+    position: absolute;
+    width: 16px;
+    height: 5px;
+    border: 1px solid black;
+    background-color: #ff0000;
+    right: 20px;
+    bottom: 194px;
+}
+
+.monitorScreen {
+    position: absolute;
+    background-image: url('./assets/Sprites/screenBase.png');
+    background-size: 346px 389.2px;
+    background-repeat: no-repeat;
+    width: 345px;
+    height: 390px;
+    padding: 0px;
+    top: 158px;
+    image-rendering: pixelated;
+    opacity: 0;
+}
+
+.grid-container {
+    display: grid;
+    grid-gap: 5px;
+    margin: 20px auto;
+    transform: translateY(500%);
+}
+
+.grid-item {
+    background-image: url('./assets/Sprites/gridSlot.png');
+    background-size: 62px 64px;
+    background-repeat: no-repeat;
+    width: 62px;
+    height: 64px;
+    padding: 0px;
+    text-align: center;
+}
