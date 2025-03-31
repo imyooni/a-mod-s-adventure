@@ -39,7 +39,7 @@ html {
 .secondary-background {
     width: 386px;
     height: 750px;
-    background: #52443c;
+    background: #2e292f;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -98,6 +98,34 @@ html {
     opacity: 0;
 }
 
+.gameLogo {
+    position: absolute;
+    background-image: url('./assets/Sprites/gameLogo.png');
+    background-size: 327px 109px;
+    background-repeat: no-repeat;
+    width: 327px;
+    height: 109px;
+    top: -110px;  /* Start off-screen */
+    z-index: 50;
+    image-rendering: pixelated;
+}
+
+
+@keyframes bounceIn {
+    0% {
+        top: -110px;  /* Start position */
+    }
+    60% {
+        top: 10px; /* Overshoot slightly below the target */
+    }
+    80% {
+        top: -5px; /* Bounce up slightly */
+    }
+    100% {
+        top: 0px; /* Settle in place */
+    }
+}
+
 .monitor {
     position: absolute;
     background-image: url('./assets/Sprites/monitor.png');
@@ -121,6 +149,20 @@ html {
     bottom: 194px;
 }
 
+.roomBack {
+    position: absolute;
+    background-image: url('./assets/Sprites/roomBack.png');
+    background-size: 388px 586px;
+    background-repeat: no-repeat;
+    width: 388px;
+    height: 586px;
+    padding: 0px;
+    left: 0px;
+    z-index: 0;
+    top: 0px;
+    image-rendering: pixelated;
+}
+
 .monitorScreen {
     position: absolute;
     background-image: url('./assets/Sprites/screenBase.png');
@@ -130,6 +172,7 @@ html {
     height: 390px;
     padding: 0px;
     top: 158px;
+    z-index: 12;
     image-rendering: pixelated;
     opacity: 0;
 }
@@ -149,4 +192,39 @@ html {
     height: 64px;
     padding: 0px;
     text-align: center;
+}
+
+.money-border {
+    position: absolute;
+    bottom: 147px;
+    right: 43px;
+    width: auto;
+    height: 19px;
+    text-align: center;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+
+
+.money-sprite {
+    display: flex;
+    height: 19px;
+    overflow: hidden;
+    image-rendering: pixelated;
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+    opacity: 0;
+}
+
+.money-sprite span {
+    display: inline-block;
+    width: 11px;  /* Ensure width matches digitWidth in JS */
+    height: 19px;
+    background-image: url('./assets/Sprites/money_numbers.png');
+    background-repeat: no-repeat;
+}
+
+
+.money-sprite span {
+    margin-right: 3px; /* Adjust this as needed */
 }
